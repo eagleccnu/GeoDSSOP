@@ -94,7 +94,7 @@ reported the same values.
   asset is tracked in Git.
 - [x] The audited pre-release tree contained 62 blobs; the largest tracked file
   was 740,623 bytes and all tracked content totaled approximately 1.15 MB.
-- [x] The local tree and private GitHub `main` tree at commit
+- [x] The local tree and GitHub `main` tree at commit
   `980a6d4d427d7a0ac589615d88124f6f14ffb49e` matched exactly by path and Git
   blob hash.
 - [x] Code licensing, the bundled wwPDB example, ESM-2 dependencies, and
@@ -103,7 +103,14 @@ reported the same values.
 ## Acceptance decision
 
 GeoDSSOP v0.1.0 satisfies the planned reproducibility, provenance, regression,
-privacy, file-size, licensing, and remote-integrity gates. The repository
-remains private pending the manuscript/publication timing decision; changing
-visibility requires a separate release-time review but does not require model
-retraining.
+privacy, file-size, licensing, and remote-integrity gates.
+
+## Public-visibility transition
+
+After the private release audit passed, the repository was changed to public on
+2026-08-25 at the owner's direction. Anonymous requests returned HTTP 200 for
+the repository API, the tagged README, and the `v0.1.0` release API. An
+anonymous download of the release `SHA256SUMS` asset reproduced SHA-256
+`ea258cc34b9f083bedc7dd494c31c44cd7b54a41a7157f00303c3f9271a7f3a6`.
+The visibility change did not modify the `v0.1.0` tag, its three model weights,
+or any frozen result.

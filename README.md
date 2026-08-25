@@ -10,9 +10,8 @@ The internal development identifier **B4-PDB** maps exactly to the released
 model **GeoDSSOP-PDB**. In text where the structure source is unambiguous, the
 method is shortened to **GeoDSSOP**.
 
-> Release status: research preview (`v0.1.0`). The repository is initially
-> private while the manuscript, licensing record, and public release date are
-> finalized.
+> Release status: public research preview (`v0.1.0`). The code, frozen result
+> tables, minimal example, and release weights are openly accessible.
 
 ## What is released
 
@@ -96,8 +95,9 @@ The three inference files are release assets, not Git objects:
 python scripts/download_weights.py --output-dir checkpoints
 ```
 
-While the repository is private, collaborators must provide a GitHub token via
-the standard `GITHUB_TOKEN` environment variable. Never place a token in this
+The public release can be downloaded anonymously. An optional GitHub token may
+be supplied through the standard `GITHUB_TOKEN` environment variable for API
+rate-limit management or use with a private fork. Never place a token in this
 repository or in a command committed to shell history. Every file is verified
 against [checkpoints/weights-manifest.json](checkpoints/weights-manifest.json).
 

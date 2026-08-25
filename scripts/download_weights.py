@@ -24,7 +24,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--token-env",
         default="GITHUB_TOKEN",
-        help="environment-variable name containing a token for a private repository",
+        help="environment-variable name containing an optional GitHub token",
     )
     return parser.parse_args(argv)
 
