@@ -1,0 +1,51 @@
+schema_version: 1
+feature_contract: P2_v2
+
+node_features:
+  amino_acid_order: ACDEFGHIKLMNPQRSTVWYX
+  amino_acid_one_hot_channels: 21
+  torsions: [phi, psi, omega]
+  torsion_representation: [sin, cos]
+  torsion_mask_channels: 3
+  rsa:
+    sphere_points: 96
+    probe_radius_angstrom: 1.4
+    normalization: Tien_2013_Gly_X_Gly_maximum_ASA
+    clip: [0.0, 1.0]
+  secondary_structure:
+    classes: [coil, helix, strand]
+    helix_phi_degrees: [-160.0, -30.0]
+    helix_psi_degrees: [-80.0, 45.0]
+    strand_phi_degrees: [-180.0, -40.0]
+    strand_psi_union_degrees:
+      - [-180.0, -120.0]
+      - [90.0, 180.0]
+  local_contact_density_normalizer: 16
+  scalar_channel_count: 40
+  vector_channels: [N_to_C_unit_direction]
+
+edge_features:
+  directed: true
+  self_edges: false
+  sequence_offsets: [-2, -1, 1, 2]
+  spatial_ca_cutoff_angstrom: 12.0
+  spatial_max_neighbors_per_source: 16
+  rbf_channels: 16
+  rbf_centers_angstrom: linear_0_to_12_inclusive
+  rbf_width_angstrom: 0.8
+  sequence_separation_clip: 32
+  scalar_channel_count: 21
+  vector_channels:
+    - source_to_destination_unit_direction
+    - source_backbone_direction
+    - destination_backbone_direction
+
+excluded_fields:
+  - b_factor
+  - occupancy_as_feature
+  - experimental_method
+  - resolution
+  - ligand_identity
+  - source
+  - dataset_role
+  - label

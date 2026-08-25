@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+*askpass*
+auth.json
+credentials*
+
+# Model weights and generated caches
+*.pt
+*.pth
+*.ckpt
+checkpoints/*.safetensors
+dist/model-assets/
+feature-cache/
+structure-cache/
+
+# Generated runs and outputs
+runs/
+evaluation/
+example-output/
+outputs/
+logs/
+tmp/

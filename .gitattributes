@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.cif.gz binary
+*.safetensors binary
+*.parquet binary
+*.npz binary
+*.png binary
+*.pdf binary

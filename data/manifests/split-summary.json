@@ -1,0 +1,35 @@
+{
+  "labels_included": false,
+  "manifest_filename": "split-manifest.csv",
+  "manifest_sha256": "3fed87e5ccc2899d3ab212b2561b351c7aadca9780cec58d55ef4161d86b7dc3",
+  "note": "Accessions, split roles, homology groups and sequence hashes only; supervision values are not redistributed.",
+  "records": 4150,
+  "release_id": "dssop_train_ready_v1_20260801",
+  "role_counts": {
+    "experimental_grouped_cv": 26,
+    "protected_historical_test_metadata_only": 10,
+    "protected_md_test_metadata_only": 136,
+    "quarantine_metadata_only": 38,
+    "weak_train": 3490,
+    "weak_validation": 450
+  },
+  "schema": "geodssop_split_manifest_v1",
+  "sequences_included": false,
+  "source_counts": {
+    "experimental_nmr": 26,
+    "historical_test": 10,
+    "md_ired": 1359,
+    "soppe_legacy": 2755
+  },
+  "source_proteins_parquet_sha256": "31dedfec7b0158be5e19c57c1638c24af793e7bd03107a6c87ddb38d9ae84326",
+  "source_role_counts": {
+    "experimental_nmr|experimental_grouped_cv": 26,
+    "historical_test|protected_historical_test_metadata_only": 10,
+    "md_ired|protected_md_test_metadata_only": 136,
+    "md_ired|weak_train": 1070,
+    "md_ired|weak_validation": 153,
+    "soppe_legacy|quarantine_metadata_only": 38,
+    "soppe_legacy|weak_train": 2420,
+    "soppe_legacy|weak_validation": 297
+  }
+}

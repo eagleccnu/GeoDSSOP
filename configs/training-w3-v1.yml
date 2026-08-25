@@ -1,0 +1,50 @@
+schema_version: 1
+method: GeoDSSOP-PDB
+strategy_id: W3_equal_source_joint_anchor
+
+data:
+  release_id: dssop_train_ready_v1_20260801
+  label_target: raw_unclipped_label_s2
+  target_transform: identity
+  target_clipping: false
+  sources: [md_ired, soppe_legacy]
+  weak_train:
+    total_records: 3490
+    md_ired_records: 1070
+    soppe_legacy_records: 2420
+  weak_validation:
+    total_records: 450
+    md_ired_records: 153
+    soppe_legacy_records: 297
+  protected_labels_used_for_gradient_or_early_stopping: false
+
+optimization:
+  seeds: [20260801, 20260802, 20260803]
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  scheduler: none
+  precision: float32
+  gradient_clip_global_norm: 1.0
+  batch_proteins: 4
+  proteins_per_source: 2
+  batches_per_epoch: 1210
+  maximum_epochs: 50
+  minimum_epochs: 10
+  early_stopping_patience_epochs: 8
+  early_stopping_minimum_absolute_improvement: 0.00001
+
+objective:
+  loss: Huber
+  delta: 0.10
+  reduction:
+    - mean_valid_residues_within_protein
+    - mean_proteins_within_source
+    - mean_sources
+  validation_primary_metric: equal_source_mean_protein_huber
+
+reproduction_note: >-
+  This path-neutral file records the frozen paper protocol. The SHA-identified
+  original preregistration remains the authority for exact historical training;
+  scripts/train_geodssop.py implements the same core W3 sampling and loss using
+  the portable cached-data manifest described in docs/TRAINING.md.

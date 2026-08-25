@@ -1,0 +1,18 @@
+name: geodssop
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.9.20
+  - numpy=1.26.4
+  - scipy=1.12.0
+  - pytorch=2.5.1
+  - pytorch-cuda=11.8
+  - biopython=1.84
+  - pip
+  - pip:
+      - safetensors==0.5.2
+      - transformers==4.48.3
+      - accelerate==1.3.0
+      - pytest==8.3.5

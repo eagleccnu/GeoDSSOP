@@ -1,0 +1,57 @@
+schema_version: 1
+method: GeoDSSOP-PDB
+legacy_development_id: B4-PDB
+release_version: 0.1.0
+
+sequence_encoder:
+  repository: facebook/esm2_t33_650M_UR50D
+  revision: 08e4846e537177426273712802403f7ba8261b6c
+  representation: last_hidden_state_layer_33
+  residue_dimension: 1280
+  backbone_trainable: false
+  cache_storage_dtype: float16
+  inference_dtype_after_load: float32
+
+structure_graph:
+  canonical_nodes: input_sequence_residues
+  node_scalar_channels: 40
+  node_vector_channels: 1
+  sequence_offsets: [-2, -1, 1, 2]
+  spatial_ca_cutoff_angstrom: 12.0
+  maximum_spatial_neighbors_per_source: 16
+  edge_scalar_channels: 21
+  edge_vector_channels: 3
+  graph_encoder: GVP_style_scalar_vector_message_passing
+  graph_layers: 3
+  scalar_hidden_dimension: 128
+  vector_hidden_channels: 16
+
+fusion_and_head:
+  fusion: learned_sigmoid_gate
+  hidden_dimension: 128
+  tcn_dilations: [1, 2, 4, 8, 16]
+  tcn_kernel_size: 3
+  dropout: 0.10
+  output_transform: sigmoid
+  trainable_parameters: 1116753
+
+ensemble:
+  training_strategy: W3_equal_source_joint_anchor
+  seeds: [20260801, 20260802, 20260803]
+  point_prediction: equal_arithmetic_mean_of_residue_predictions
+  uncertainty: population_standard_deviation_ddof_0
+  release_tag: v0.1.0
+  weights:
+    - filename: geodssop-pdb-w3-seed20260801.safetensors
+      sha256: 2f16536f395a763a2f83842c8e605d855c52c3f05d13006e050bfc23fc67171a
+    - filename: geodssop-pdb-w3-seed20260802.safetensors
+      sha256: cb088fc6ef7f9089eb0b3a4a03f758cfb923ef6a7e055688b2d7eb4580f73809
+    - filename: geodssop-pdb-w3-seed20260803.safetensors
+      sha256: bf9c3c12c55c8909fd5c1e4be40f97b17c39dcd970f1a1bd6ab4169992792724
+
+provenance:
+  training_git_commit: 0f008bb9ab944d7a1523b5a89c0dd19411fe7146
+  evaluation_git_commit: dc0f4a36f43c3dd4a83b6fa5a10e08738028203c
+  original_training_config_sha256: 845c16898ccab6d5e16cecf2d1b165669ea8a0200174352b496f876b8204237c
+  original_graph_config_sha256: 588e1b1a6e9fdc0cd30b7b4a6ffceaaabfb01fed13f2f90f4e296967960ac248
+  data_acceptance_sha256: 9cfcae2ef78a649c36291cb954aae9a98639d9b198fb9d2314edfdcb864442e1

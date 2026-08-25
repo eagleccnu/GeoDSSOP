@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geodssop"
+version = "0.1.0"
+description = "Geometry-aware sequence-structure prediction of protein backbone N-H order parameters"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "Bin Jiang", email = "bin.jiang@foxmail.com"},
+]
+keywords = ["protein dynamics", "order parameter", "ESM-2", "geometric deep learning"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "biopython>=1.84,<1.85",
+  "numpy>=1.26,<2",
+  "safetensors>=0.5,<0.6",
+  "scipy>=1.12,<2",
+  "torch>=2.5,<2.6",
+]
+
+[project.optional-dependencies]
+esm = ["transformers>=4.48,<4.49", "accelerate>=1.3,<1.4"]
+dev = ["pytest>=8.3,<9", "PyYAML>=6,<7"]
+plot = ["matplotlib>=3.8,<4"]
+
+[project.scripts]
+geodssop = "geodssop.cli:main"
+
+[project.urls]
+Repository = "https://github.com/eagleccnu/GeoDSSOP"
+Issues = "https://github.com/eagleccnu/GeoDSSOP/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+markers = [
+  "e2e: requires the three released W3 weight files",
+]

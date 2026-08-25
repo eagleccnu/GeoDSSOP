@@ -1,0 +1,11 @@
+result_id,model_family,training_labels,evaluation_dataset,aggregation,proteins,labels,macro_pcc,micro_pcc,macro_spearman,macro_rmse,macro_mae,evidence_role,source_id
+B0W0_MDVAL,B0-W0,MD-iRED,md_weak_validation,mean_of_seed_metrics,153,20753,0.596815,0.559623,,0.160412,0.108296,development_context,B0_B4_SOURCE_REPORT
+B0W0_SVAL,B0-W0,MD-iRED,soppe_weak_validation,mean_of_seed_metrics,297,35330,0.729647,0.600650,,0.141050,0.090687,development_context,B0_B4_SOURCE_REPORT
+B0W3_MDVAL,B0-W3,MD+S-OPPE_W3,md_weak_validation,mean_of_seed_metrics,153,20753,0.6183,,,0.164998,,development_context,B0_B4_SOURCE_REPORT
+B0W3_SVAL,B0-W3,MD+S-OPPE_W3,soppe_weak_validation,mean_of_seed_metrics,297,35330,0.8040,,,0.077197,,development_context,B0_B4_SOURCE_REPORT
+SOPPCL_S_LATENT_MDVAL,SOPPCL_retrained_latent64,S-OPPE,md_weak_validation,single_seed,153,20753,0.6690,,0.6935,0.1653,0.1107,cross_domain_context_only,SOPPCL_MD_D1_REPORT
+SOPPCL_S_RAW_MDVAL,SOPPCL_retrained_raw1310,S-OPPE,md_weak_validation,single_seed,153,20753,0.6870,,0.6930,0.1647,0.1106,cross_domain_context_only,SOPPCL_MD_D1_REPORT
+SOPPCL_MD_LATENT_MDVAL,SOPPCL_retrained_latent64,MD-iRED,md_weak_validation,single_seed,153,20753,0.7256,,0.7339,0.1368,0.0939,domain_matched_context_only,SOPPCL_MD_D1_REPORT
+SOPPCL_MD_RAW_MDVAL,SOPPCL_retrained_raw1310,MD-iRED,md_weak_validation,single_seed,153,20753,0.7359,,0.7411,0.1309,0.0903,domain_matched_context_only,SOPPCL_MD_D1_REPORT
+SOPPCL_S_LATENT_SVAL274,SOPPCL_retrained_latent64,S-OPPE,soppe_homology_validation274,single_model,274,32480,0.881918,0.828114,0.808047,0.059634,0.040189,posthoc_validation_not_official_test,SOPPCL_SOPPE_AUDIT
+SOPPCL_S_RAW_SVAL274,SOPPCL_retrained_raw1310,S-OPPE,soppe_homology_validation274,single_model,274,32480,0.883369,0.832496,0.810870,0.059541,0.040532,posthoc_validation_not_official_test,SOPPCL_SOPPE_AUDIT

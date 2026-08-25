@@ -1,0 +1,13 @@
+dataset_id,label_source,registry_role,evidence_tier,protein_records,joint_homology_groups,labeled_residues,used_for_w3_gradient,used_for_w3_early_stopping,used_for_posthoc_finetuning,notes
+d1_registry_all,"MD-iRED;S-OPPE;experimental NMR;metadata-only",registry,inventory,4150,,495528,no,no,no,"Complete D1 registry; 3966 label-bearing records; 495373 QC-pass rows and 155 masked U/X rows"
+weak_train_all,"MD-iRED+S-OPPE",weak_train,development_training,3490,3029,437332,yes,no,no,"W3 gradient source; 437177 QC-pass rows"
+md_weak_train,MD-iRED,weak_train,development_training,1070,,,yes,no,no,"Physical weak labels; target is raw_unclipped_label_s2"
+soppe_weak_train,S-OPPE,weak_train,development_training,2420,,,yes,no,no,"Pseudo-labels from the OPPE/S-OPPE teacher lineage"
+weak_validation_all,"MD-iRED+S-OPPE",weak_validation,development_validation,450,372,56083,no,yes,no,"Used every epoch for early stopping and best-checkpoint selection"
+md_weak_validation,MD-iRED,weak_validation,development_validation,153,,20753,no,yes,no,"Not an independent test"
+soppe_weak_validation,S-OPPE,weak_validation,development_validation,297,,35330,no,yes,no,"No S-OPPE-only independent test split exists"
+md_test136,MD-iRED,protected_md_test,independent_confirmation,136,104,18939,no,no,no,"Frozen test split; labels opened only after label-blind expert-cache acceptance"
+nmr10,experimental_NMR,protected_historical_test,historical_external_benchmark,10,8,709,no,no,no,"Excluded from OPPE/S-OPPE and W3 training; previously used for method comparison, so not a new prospective blind test"
+nmr26,experimental_NMR,experimental_grouped_cv,exploratory_experimental,26,22,2113,no,no,yes,"Not used by W3; used in later grouped nested-CV/adapters; related to the S-OPPE teacher lineage"
+nmr36,experimental_NMR,descriptive_union,exploratory_descriptive,36,,2822,no,no,no,"Descriptive union of NMR26 and NMR10; not a new independent dataset"
+soppe_quarantine,S-OPPE,quarantine,excluded,38,24,0,no,no,no,"Homology conflicts and audit retention; never used for W3 gradients"

@@ -1,0 +1,41 @@
+{
+  "ensemble_strategy": "equal arithmetic mean of three residue predictions; uncertainty is population standard deviation (ddof=0)",
+  "legacy_model_id": "B4-PDB",
+  "members": [
+    {
+      "bytes": 4477940,
+      "filename": "geodssop-pdb-w3-seed20260801.safetensors",
+      "seed": 20260801,
+      "sha256": "2f16536f395a763a2f83842c8e605d855c52c3f05d13006e050bfc23fc67171a",
+      "source_run_id": "m2_b4_pdb_w3_seed20260801_v1",
+      "training_checkpoint_epoch": 8,
+      "training_checkpoint_sha256": "a5bccb7725292ddf303c905e6c144fde1b38458067f4f828f63eafa3901fafac",
+      "training_checkpoint_step": 9680
+    },
+    {
+      "bytes": 4477940,
+      "filename": "geodssop-pdb-w3-seed20260802.safetensors",
+      "seed": 20260802,
+      "sha256": "cb088fc6ef7f9089eb0b3a4a03f758cfb923ef6a7e055688b2d7eb4580f73809",
+      "source_run_id": "m2_b4_pdb_w3_seed20260802_v1",
+      "training_checkpoint_epoch": 13,
+      "training_checkpoint_sha256": "aa78f9e833adebd4ef19d91fa424b33648df8dba0fad05f69bb924d65d6002b3",
+      "training_checkpoint_step": 15730
+    },
+    {
+      "bytes": 4477940,
+      "filename": "geodssop-pdb-w3-seed20260803.safetensors",
+      "seed": 20260803,
+      "sha256": "bf9c3c12c55c8909fd5c1e4be40f97b17c39dcd970f1a1bd6ab4169992792724",
+      "source_run_id": "m2_b4_pdb_w3_seed20260803_v1",
+      "training_checkpoint_epoch": 9,
+      "training_checkpoint_sha256": "52f8155e99e9164db3f94d15becb2a14b68d5c4a4273cf3f6f50546eecb3401c",
+      "training_checkpoint_step": 10890
+    }
+  ],
+  "method": "GeoDSSOP-PDB",
+  "schema": "geodssop_weight_manifest_v1",
+  "training_config_sha256": "845c16898ccab6d5e16cecf2d1b165669ea8a0200174352b496f876b8204237c",
+  "training_git_commit": "0f008bb9ab944d7a1523b5a89c0dd19411fe7146",
+  "version": "0.1.0"
+}

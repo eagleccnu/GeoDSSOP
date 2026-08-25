@@ -1,0 +1,4 @@
+result_id,model_id,aggregation,seeds,joint_huber,md_huber,soppe_huber,mixed450_macro_pcc,md_macro_pcc,soppe_macro_pcc,delta_md_huber_vs_full,full_better_seed_count,gate_interpretation,source_id
+STRUCT_FULL,geodssop_w3,mean_of_seed_metrics,3,0.00276132,0.00429664,0.00122600,0.88447,0.80263,0.92664,0.00000000,,reference_full_model,G1_STRUCTURE_GATE
+STRUCT_NOSTRUCT,geodssop_nostruct,mean_of_seed_metrics,3,0.00403130,0.00593483,0.00212777,0.81629,0.72199,0.86487,0.00163819,3,"Clear structural-branch contribution; exceeds preregistered 1e-4 MD-Huber threshold",G1_STRUCTURE_GATE
+STRUCT_SHUFFLEEDGE,geodssop_shuffleedge,mean_of_seed_metrics,3,0.00279880,0.00435233,0.00124527,0.88365,0.79972,0.92688,0.00005568,2,"Additional benefit of correct long-range topology not detected; below preregistered 1e-4 threshold",G1_STRUCTURE_GATE

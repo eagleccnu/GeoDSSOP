@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use GeoDSSOP, please cite this software and the associated manuscript."
+title: "GeoDSSOP: Geometry-aware Deep Sequence-Structure Order-Parameter Predictor"
+type: software
+version: 0.1.0
+date-released: 2026-08-25
+authors:
+  - family-names: Jiang
+    given-names: Bin
+    email: bin.jiang@foxmail.com
+repository-code: "https://github.com/eagleccnu/GeoDSSOP"
+license: MIT
+keywords:
+  - protein dynamics
+  - NMR order parameter
+  - molecular dynamics
+  - geometric deep learning
+  - ESM-2
